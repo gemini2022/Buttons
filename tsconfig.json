@@ -14,6 +14,11 @@
     "declaration": false,
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
+    "paths": {
+      "primary-button-directive": [
+        "./dist/primary-button-directive"
+      ]
+    },
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",

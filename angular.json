@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -94,6 +94,39 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "primary-button-directive": {
+      "projectType": "library",
+      "root": "projects/primary-button-directive",
+      "sourceRoot": "projects/primary-button-directive/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/primary-button-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/primary-button-directive/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/primary-button-directive/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/primary-button-directive/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
