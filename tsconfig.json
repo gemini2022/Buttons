@@ -17,6 +17,9 @@
     "paths": {
       "primary-button-directive": [
         "./dist/primary-button-directive"
+      ],
+      "primary-icon-button-directive": [
+        "./dist/primary-icon-button-directive"
       ]
     },
     "importHelpers": true,

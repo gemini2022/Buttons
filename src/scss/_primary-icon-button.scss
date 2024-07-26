@@ -1,0 +1,79 @@
+:root {
+    /* ===================== (DIMENSIONS) ===================== */
+    
+    // --primary-icon-button-width: 100px;
+    // --primary-icon-button-height: 40px;
+    // --primary-icon-button-padding: 20px;
+    --primary-icon-button-icon-size: 24px;
+    --primary-icon-button-cursor: pointer;
+    --primary-icon-button-border-width: 1px;
+    // --primary-icon-button-font-weight: normal;
+    --primary-icon-button-border-radius: 4px;
+    // --primary-icon-button-font-family: Arial, Helvetica, sans-serif;
+    --primary-icon-button-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.13);
+
+
+
+
+
+    /* ===================== (COLORS) ===================== */
+
+    --primary-icon-button-icon-color: red;
+    --primary-icon-button-border-color: linear-gradient(#d2d2d2, #b5b5b5);
+    --primary-icon-button-background-color: linear-gradient(#eaeaea, #cecece);
+
+
+
+
+
+    /* ===================== (HOVER COLORS) ===================== */
+
+    --primary-icon-button-icon-hover-color: #ff5c5c;
+    --primary-icon-button-border-hover-color: linear-gradient(rgb(213, 213, 213), rgb(184, 184, 184));
+    --primary-icon-button-background-hover-color: linear-gradient(rgb(240, 240, 240), rgb(212, 212, 212));
+
+
+
+
+
+    /* ===================== (ACTIVE COLORS) ===================== */
+
+    --primary-icon-button-active-drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);
+    --primary-icon-button-icon-active-color: #ffa4a4;
+    --primary-icon-button-border-active-color: linear-gradient(rgb(219, 219, 219), rgb(190, 190, 190));
+    --primary-icon-button-background-active-color: linear-gradient(rgb(246, 246, 246), rgb(218, 218, 218));
+
+
+
+
+
+    /* ===================== (FOCUS OUTLINE) ===================== */
+
+    // --primary-icon-button-focus-outline-width: 2px;
+    // --primary-icon-button-focus-outline-offset: 2px;
+    // --primary-icon-button-focus-outline-style: solid;
+    // --primary-icon-button-focus-outline-color: #000000;
+
+
+
+
+
+    /* ===================== (FOCUS VISIBLE OUTLINE) ===================== */
+
+    --primary-icon-button-focus-visible-outline-width: 2px;
+    --primary-icon-button-focus-visible-outline-offset: 2px;
+    --primary-icon-button-focus-visible-outline-style: solid;
+    --primary-icon-button-focus-visible-outline-color: #000000;
+
+
+
+
+
+    /* ===================== (DISABLED COLORS) ===================== */
+
+    --primary-icon-button-disabled-cursor: default;
+    --primary-icon-button-icon-disabled-color: rgb(186, 186, 186);
+    --primary-icon-button-border-disabled-color: linear-gradient(rgb(217, 217, 217), rgb(198, 198, 198));
+    --primary-icon-button-background-disabled-color: linear-gradient(rgb(224, 224, 224), rgb(197, 197, 197));
+    --primary-icon-button-disabled-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+}

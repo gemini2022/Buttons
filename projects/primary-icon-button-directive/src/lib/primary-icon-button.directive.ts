@@ -1,18 +1,16 @@
-import { Directive, ElementRef, inject, input, InputSignal, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, inject, input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[primaryButton]',
+  selector: '[primaryIconButton]',
   standalone: true
 })
-export class PrimaryButtonDirective {
+export class PrimaryIconButtonDirective {
   // Inputs
   public width = input<string>();
   public height = input<string>();
   public cursor = input<string>();
   public padding = input<string>();
-  public fontSize = input<string>();
-  public fontWeight = input<string>();
-  public fontFamily = input<string>();
+  public iconSize = input<string>();
   public dropShadow = input<string>();
   public borderWidth = input<string>();
   public borderRadius = input<string>();
@@ -33,9 +31,6 @@ export class PrimaryButtonDirective {
   private content!: string;
   private _cursor!: string;
   private _padding!: string;
-  private _fontSize!: string;
-  private _fontWeight!: string;
-  private _fontFamily!: string;
   private _dropShadow!: string;
   private _borderWidth!: string;
   private _borderRadius!: string;
@@ -48,11 +43,11 @@ export class PrimaryButtonDirective {
   private _focusOutlineStyle!: string;
   private _focusOutlineColor!: string;
   private _focusOutlineOffset!: string;
-  protected buttonType: string = 'primary';
   private _focusVisibleOutlineWidth!: string;
   private _focusVisibleOutlineStyle!: string;
   private _focusVisibleOutlineColor!: string;
   private _focusVisibleOutlineOffset!: string;
+  protected buttonType: string = 'primary-icon';
 
 
 
@@ -78,8 +73,8 @@ export class PrimaryButtonDirective {
     this.renderer.addClass(this.button.nativeElement, this.buttonType + '-button');
     const border = this.createElementAndClass(this.button.nativeElement, 'border');
     const background = this.createElementAndClass(border, 'background');
-    const text = this.createElementAndClass(background, 'text');
-    text.innerText = this.content;
+    const svg = this.createSvgElementAndClass(background);
+    this.createPathElement(svg);
   }
 
 
@@ -89,10 +84,7 @@ export class PrimaryButtonDirective {
     this._height = this.setProperty('height', this.width(), 'height', true);
     this._cursor = this.setProperty('cursor', this.cursor(), 'cursor');
     this._padding = this.setProperty('padding', this.padding(), 'padding');
-    this._fontSize = this.setProperty('fontSize', this.fontSize(), 'font-size');
     this._dropShadow = this.setProperty('boxShadow', this.dropShadow(), 'drop-shadow');
-    this._fontWeight = this.setProperty('fontWeight', this.fontWeight(), 'font-weight');
-    this._fontFamily = this.setProperty('fontFamily', this.fontWeight(), 'font-family');
     this._borderWidth = this.setProperty('borderWidth', this.borderWidth(), 'border-width');
     this._borderRadius = this.setProperty('borderRadius', this.borderRadius(), 'border-radius');
     this._focusOutlineWidth = this.setProperty('outlineWidth', this.focusOutlineWidth(), 'focus-outline-width');
@@ -113,16 +105,38 @@ export class PrimaryButtonDirective {
     this.addContainerClass();
     this.addBorderClass();
     this.addBackgroundClass();
-    this.addTextClass();
+    this.addSvgClass();
   }
 
 
-
+  
   private createElementAndClass(parent: HTMLDivElement, className: string): HTMLDivElement {
     const element = this.renderer.createElement('div');
     this.renderer.appendChild(parent, element);
     this.renderer.addClass(element, this.buttonType + '-button-' + className);
     return element;
+  }
+
+
+
+  private createSvgElementAndClass(background: HTMLDivElement): SVGElement {
+    const iconSize = this.iconSize() ? this.iconSize()! : getComputedStyle(document.documentElement).getPropertyValue('--' + this.buttonType + '-button-icon-size');
+    const svg = this.renderer.createElement('svg', 'http://www.w3.org/2000/svg');
+    this.renderer.setAttribute(svg, 'xmlns', 'http://www.w3.org/2000/svg');
+    this.renderer.setAttribute(svg, 'height', iconSize);
+    this.renderer.setAttribute(svg, 'viewBox', '0 -960 960 960');
+    this.renderer.setAttribute(svg, 'width', iconSize);
+    this.renderer.appendChild(background, svg);
+    this.renderer.addClass(svg, this.buttonType + '-' + 'button-svg');
+    return svg;
+  }
+
+
+
+  private createPathElement(svg: SVGElement): void {
+    const path = this.renderer.createElement('path', 'http://www.w3.org/2000/svg');
+    this.renderer.setAttribute(path, 'd', this.content);
+    this.renderer.appendChild(svg, path);
   }
 
 
@@ -188,12 +202,9 @@ export class PrimaryButtonDirective {
 
 
 
-  private addTextClass(): void {
-    this.style.innerHTML += `.` + this.buttonType + `-button-text {
-      font-size: ` + this._fontSize + `;
-      font-weight: ` + this._fontWeight + `;
-      font-family: ` + this._fontFamily + `;
-      color: var(--` + this.buttonType + `-button-text-color);
+  private addSvgClass(): void {
+    this.style.innerHTML += `.` + this.buttonType + `-button-svg {
+      fill: var(--` + this.buttonType + `-button-icon-color);
     }`;
   }
 
@@ -221,8 +232,8 @@ export class PrimaryButtonDirective {
           .` + this.buttonType + `-button-background {
               background: var(--` + this.buttonType + `-button-background-hover-color);
 
-              .` + this.buttonType + `-button-text {
-                color: var(--` + this.buttonType + `-button-text-hover-color);
+              .` + this.buttonType + `-button-svg {
+                fill: var(--` + this.buttonType + `-button-icon-hover-color);
               }
           }
       }`
@@ -242,8 +253,8 @@ export class PrimaryButtonDirective {
           .` + this.buttonType + `-button-background {
               background: var(--` + this.buttonType + `-button-background-active-color);
 
-              .` + this.buttonType + `-button-text {
-                color: var(--` + this.buttonType + `-button-text-active-color);
+              .` + this.buttonType + `-button-svg {
+                fill: var(--` + this.buttonType + `-button-icon-active-color);
               }
           }
       }`
@@ -288,8 +299,8 @@ export class PrimaryButtonDirective {
           .` + this.buttonType + `-button-background {
               background: var(--` + this.buttonType + `-button-background-disabled-color);
 
-              .` + this.buttonType + `-button-text {
-                color: var(--` + this.buttonType + `-button-text-disabled-color);
+              .` + this.buttonType + `-button-svg {
+                fill: var(--` + this.buttonType + `-button-icon-disabled-color);
               }
           }
       }

@@ -1,0 +1,79 @@
+:root {
+    /* ===================== (DIMENSIONS) ===================== */
+    
+    // --primary-button-width: 100px;
+    // --primary-button-height: 40px;
+    // --primary-button-padding: 20px;
+    // --primary-button-font-size: 13px;
+    --primary-button-cursor: pointer;
+    --primary-button-border-width: 1px;
+    // --primary-button-font-weight: normal;
+    --primary-button-border-radius: 4px;
+    // --primary-button-font-family: Arial, Helvetica, sans-serif;
+    --primary-button-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.13);
+
+
+
+
+
+    /* ===================== (COLORS) ===================== */
+
+    --primary-button-text-color: #646464;
+    --primary-button-border-color: linear-gradient(#d2d2d2, #b5b5b5);
+    --primary-button-background-color: linear-gradient(#eaeaea, #cecece);
+
+
+
+
+
+    /* ===================== (HOVER COLORS) ===================== */
+
+    --primary-button-text-hover-color: rgb(75, 75, 75);
+    --primary-button-border-hover-color: linear-gradient(rgb(213, 213, 213), rgb(184, 184, 184));
+    --primary-button-background-hover-color: linear-gradient(rgb(240, 240, 240), rgb(212, 212, 212));
+
+
+
+
+
+    /* ===================== (ACTIVE COLORS) ===================== */
+
+    --primary-button-active-drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);
+    --primary-button-text-active-color: rgb(81, 81, 81);
+    --primary-button-border-active-color: linear-gradient(rgb(219, 219, 219), rgb(190, 190, 190));
+    --primary-button-background-active-color: linear-gradient(rgb(246, 246, 246), rgb(218, 218, 218));
+
+
+
+
+
+    /* ===================== (FOCUS OUTLINE) ===================== */
+
+    // --primary-button-focus-outline-width: 2px;
+    // --primary-button-focus-outline-offset: 2px;
+    // --primary-button-focus-outline-style: solid;
+    // --primary-button-focus-outline-color: #000000;
+
+
+
+
+
+    /* ===================== (FOCUS VISIBLE OUTLINE) ===================== */
+
+    --primary-button-focus-visible-outline-width: 2px;
+    --primary-button-focus-visible-outline-offset: 2px;
+    --primary-button-focus-visible-outline-style: solid;
+    --primary-button-focus-visible-outline-color: #000000;
+
+
+
+
+    
+    /* ===================== (DISABLED COLORS) ===================== */
+
+    --primary-button-disabled-cursor: default;
+    --primary-button-text-disabled-color: rgb(186, 186, 186);
+    --primary-button-border-disabled-color: linear-gradient(rgb(217, 217, 217), rgb(198, 198, 198));
+    --primary-button-background-disabled-color: linear-gradient(rgb(224, 224, 224), rgb(197, 197, 197));
+    --primary-button-disabled-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,1 @@
+export * from './lib/primary-icon-button.directive';
