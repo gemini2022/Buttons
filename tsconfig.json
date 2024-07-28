@@ -15,11 +15,20 @@
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "paths": {
+      "button-base": [
+        "./dist/button-base"
+      ],
+      "icon-button-base": [
+        "./dist/icon-button-base"
+      ],
       "primary-button-directive": [
         "./dist/primary-button-directive"
       ],
       "primary-icon-button-directive": [
         "./dist/primary-icon-button-directive"
+      ],
+      "text-button-base": [
+        "./dist/text-button-base"
       ]
     },
     "importHelpers": true,

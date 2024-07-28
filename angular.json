@@ -163,6 +163,105 @@
           }
         }
       }
+    },
+    "button-base": {
+      "projectType": "library",
+      "root": "projects/button-base",
+      "sourceRoot": "projects/button-base/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/button-base/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/button-base/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/button-base/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/button-base/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "text-button-base": {
+      "projectType": "library",
+      "root": "projects/text-button-base",
+      "sourceRoot": "projects/text-button-base/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/text-button-base/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/text-button-base/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/text-button-base/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/text-button-base/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "icon-button-base": {
+      "projectType": "library",
+      "root": "projects/icon-button-base",
+      "sourceRoot": "projects/icon-button-base/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/icon-button-base/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/icon-button-base/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/icon-button-base/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/icon-button-base/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
