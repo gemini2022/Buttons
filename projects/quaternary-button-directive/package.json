@@ -1,0 +1,14 @@
+{
+  "name": "quaternary-button-directive",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^18.1.0",
+    "@angular/core": "^18.1.0",
+    "button-base": "^0.0.1",
+    "text-button-base": "^0.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

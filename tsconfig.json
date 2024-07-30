@@ -27,6 +27,27 @@
       "primary-icon-button-directive": [
         "./dist/primary-icon-button-directive"
       ],
+      "quaternary-button": [
+        "./dist/quaternary-button"
+      ],
+      "quaternary-button-directive": [
+        "./dist/quaternary-button-directive"
+      ],
+      "quaternary-icon-button-directive": [
+        "./dist/quaternary-icon-button-directive"
+      ],
+      "secondary-button-directive": [
+        "./dist/secondary-button-directive"
+      ],
+      "secondary-icon-button-directive": [
+        "./dist/secondary-icon-button-directive"
+      ],
+      "tertiary-button-directive": [
+        "./dist/tertiary-button-directive"
+      ],
+      "tertiary-icon-button-directive": [
+        "./dist/tertiary-icon-button-directive"
+      ],
       "text-button-base": [
         "./dist/text-button-base"
       ]

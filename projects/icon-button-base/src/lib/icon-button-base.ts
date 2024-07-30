@@ -1,29 +1,42 @@
 import { Directive, input } from "@angular/core";
-import { ButtonBase } from "../../../button-base/src/lib/button-base";
+import { ButtonBase } from "button-base";
 
 @Directive()
 export class IconButtonBase extends ButtonBase {
-    // Inputs
+    // Input
     public iconSize = input<string>();
 
+    // private
+    private svg!: SVGElement;
 
 
     protected override createElements(): void {
         super.createElements();
-        const svg = this.createSvgElementAndClass(this.background);
-        this.createPathElement(svg);
+        this.svg = this.createSvgElement(this.background);
+        this.createPathElement();
     }
 
 
 
     protected override addClasses(): void {
         super.addClasses();
-        this.addSvgClass();
+        this.renderer.addClass(this.svg, this.buttonType + '-' + 'button-svg');
     }
 
 
 
-    private createSvgElementAndClass(background: HTMLDivElement): SVGElement {
+    protected override addClassStyles(): void {
+        super.addClassStyles();
+        if (!this.existingStyle) {
+            this.style.innerHTML += `.` + this.buttonType + `-button-svg {
+                fill: var(--` + this.buttonType + `-button-icon-color);
+            }`;
+        }
+    }
+
+
+
+    private createSvgElement(background: HTMLDivElement): SVGElement {
         const iconSize = this.iconSize() ? this.iconSize()! : getComputedStyle(document.documentElement).getPropertyValue('--' + this.buttonType + '-button-icon-size');
         const svg = this.renderer.createElement('svg', 'http://www.w3.org/2000/svg');
         this.renderer.setAttribute(svg, 'xmlns', 'http://www.w3.org/2000/svg');
@@ -31,57 +44,48 @@ export class IconButtonBase extends ButtonBase {
         this.renderer.setAttribute(svg, 'viewBox', '0 -960 960 960');
         this.renderer.setAttribute(svg, 'width', iconSize);
         this.renderer.appendChild(background, svg);
-        this.renderer.addClass(svg, this.buttonType + '-' + 'button-svg');
         return svg;
     }
 
 
 
-    private createPathElement(svg: SVGElement): void {
+    private createPathElement(): void {
         const path = this.renderer.createElement('path', 'http://www.w3.org/2000/svg');
         this.renderer.setAttribute(path, 'd', this.content);
-        this.renderer.appendChild(svg, path);
+        this.renderer.appendChild(this.svg, path);
     }
 
 
 
-    private addSvgClass(): void {
-        this.style.innerHTML += `.` + this.buttonType + `-button-svg {
-          fill: var(--` + this.buttonType + `-button-icon-color);
-        }`;
-    }
-
-
-
-    protected override addHoverPseudoClass(): void {
-        super.addHoverPseudoClass();
+    protected override addHoverStyles(): void {
+        super.addHoverStyles();
         this.style.innerHTML += `.` + this.buttonType + `-button-svg {
                     fill: var(--` + this.buttonType + `-button-icon-hover-color);
                   }
               }
-          }`
+          }`;
     }
 
 
 
-    protected override addActivePseudoClass(): void {
-        super.addActivePseudoClass();
+    protected override addActiveStyles(): void {
+        super.addActiveStyles();
         this.style.innerHTML += `.` + this.buttonType + `-button-svg {
                     fill: var(--` + this.buttonType + `-button-icon-active-color);
                   }
               }
-          }`
+          }`;
     }
 
 
 
-    protected override addDisabledPseudoClass(): void {
-        super.addDisabledPseudoClass();
+    protected override addDisabledStyles(): void {
+        super.addDisabledStyles();
         this.style.innerHTML += `.` + this.buttonType + `-button-svg {
                     fill: var(--` + this.buttonType + `-button-icon-disabled-color);
                   }
               }
           }
-        }`
-      }
+        }`;
+    }
 }

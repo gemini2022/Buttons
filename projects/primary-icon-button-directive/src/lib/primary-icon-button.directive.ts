@@ -1,5 +1,5 @@
-import { Directive, ElementRef, inject, input, Renderer2 } from '@angular/core';
-import { IconButtonBase } from '../../../icon-button-base/src/lib/icon-button-base';
+import { Directive } from '@angular/core';
+import { IconButtonBase } from 'icon-button-base';
 
 @Directive({
   selector: '[primaryIconButton]',

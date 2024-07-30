@@ -1,0 +1,79 @@
+:root {
+    /* ===================== (DIMENSIONS) ===================== */
+    
+    // --quaternary-button-width: 100px;
+    // --quaternary-button-height: 40px;
+    // --quaternary-button-padding: 20px;
+    // --quaternary-button-font-size: 13px;
+    --quaternary-button-cursor: pointer;
+    --quaternary-button-border-width: 1px;
+    // --quaternary-button-font-weight: normal;
+    --quaternary-button-border-radius: 4px;
+    // --quaternary-button-font-family: Arial, Helvetica, sans-serif;
+    --quaternary-button-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.13);
+
+
+
+
+
+    /* ===================== (COLORS) ===================== */
+
+    --quaternary-button-text-color: #646464;
+    --quaternary-button-border-color: linear-gradient(#d2d2d2, #b5b5b5);
+    --quaternary-button-background-color: linear-gradient(#eaeaea, #cecece);
+
+
+
+
+
+    /* ===================== (HOVER COLORS) ===================== */
+
+    --quaternary-button-text-hover-color: rgb(75, 75, 75);
+    --quaternary-button-border-hover-color: linear-gradient(rgb(213, 213, 213), rgb(184, 184, 184));
+    --quaternary-button-background-hover-color: linear-gradient(rgb(240, 240, 240), rgb(212, 212, 212));
+
+
+
+
+
+    /* ===================== (ACTIVE COLORS) ===================== */
+
+    --quaternary-button-active-drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);
+    --quaternary-button-text-active-color: rgb(81, 81, 81);
+    --quaternary-button-border-active-color: linear-gradient(rgb(219, 219, 219), rgb(190, 190, 190));
+    --quaternary-button-background-active-color: linear-gradient(rgb(246, 246, 246), rgb(218, 218, 218));
+
+
+
+
+
+    /* ===================== (FOCUS OUTLINE) ===================== */
+
+    // --quaternary-button-focus-outline-width: 2px;
+    // --quaternary-button-focus-outline-offset: 2px;
+    // --quaternary-button-focus-outline-style: solid;
+    // --quaternary-button-focus-outline-color: #000000;
+
+
+
+
+
+    /* ===================== (FOCUS VISIBLE OUTLINE) ===================== */
+
+    --quaternary-button-focus-visible-outline-width: 2px;
+    --quaternary-button-focus-visible-outline-offset: 2px;
+    --quaternary-button-focus-visible-outline-style: solid;
+    --quaternary-button-focus-visible-outline-color: #000000;
+
+
+
+
+    
+    /* ===================== (DISABLED COLORS) ===================== */
+
+    --quaternary-button-disabled-cursor: default;
+    --quaternary-button-text-disabled-color: rgb(186, 186, 186);
+    --quaternary-button-border-disabled-color: linear-gradient(rgb(217, 217, 217), rgb(198, 198, 198));
+    --quaternary-button-background-disabled-color: linear-gradient(rgb(224, 224, 224), rgb(197, 197, 197));
+    --quaternary-button-disabled-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+}

@@ -1,5 +1,5 @@
 import { Directive, input } from "@angular/core";
-import { ButtonBase } from "../../../button-base/src/lib/button-base";
+import { ButtonBase } from "button-base";
 
 @Directive()
 export class TextButtonBase extends ButtonBase {
@@ -12,14 +12,7 @@ export class TextButtonBase extends ButtonBase {
     private _fontSize!: string;
     private _fontWeight!: string;
     private _fontFamily!: string;
-
-
-
-    protected override createElements(): void {
-        super.createElements();
-        const text = this.createElementAndClass(this.background, 'text');
-        text.innerText = this.content;
-    }
+    private text!: HTMLDivElement;
 
 
 
@@ -32,53 +25,75 @@ export class TextButtonBase extends ButtonBase {
 
 
 
-    protected override addClasses(): void {
-        super.addClasses();
-        this.addTextClass();
+    protected override createElements(): void {
+        super.createElements();
+        this.text = this.createElement(this.background);
+        this.text.innerText = this.content;
     }
 
 
 
-    private addTextClass(): void {
-        this.style.innerHTML += `.` + this.buttonType + `-button-text {
-          font-size: ` + this._fontSize + `;
-          font-weight: ` + this._fontWeight + `;
-          font-family: ` + this._fontFamily + `;
-          color: var(--` + this.buttonType + `-button-text-color);
+    protected override addClasses(): void {
+        super.addClasses();
+        this.renderer.addClass(this.text, this.buttonType + '-button-text');
+    }
+
+
+
+    protected override addClassStyles(): void {
+        super.addClassStyles();
+        if (!this.existingStyle) {
+            this.style.innerHTML += `.` + this.buttonType + `-button-text {
+                color: var(--` + this.buttonType + `-button-text-color);
+            }`;
+        }
+    }
+
+
+
+    protected override addHoverStyles(): void {
+        super.addHoverStyles();
+        this.style.innerHTML += `
+                .` + this.buttonType + `-button-text {
+                    color: var(--` + this.buttonType + `-button-text-hover-color);
+                  }
+              }
+          }`;
+    }
+
+
+
+    protected override addActiveStyles(): void {
+        super.addActiveStyles();
+        this.style.innerHTML += `
+        
+                .` + this.buttonType + `-button-text {
+                    color: var(--` + this.buttonType + `-button-text-active-color);
+                  }
+              }
+          }`;
+    }
+
+
+
+    protected override addDisabledStyles(): void {
+        super.addDisabledStyles();
+        this.style.innerHTML += `
+
+                  .` + this.buttonType + `-button-text {
+                    color: var(--` + this.buttonType + `-button-text-disabled-color);
+                  }
+              }
+          }
         }`;
     }
 
 
 
-    protected override addHoverPseudoClass(): void {
-        super.addHoverPseudoClass();
-        this.style.innerHTML += `.` + this.buttonType + `-button-text {
-                    color: var(--` + this.buttonType + `-button-text-hover-color);
-                  }
-              }
-          }`
-    }
-
-
-
-    protected override addActivePseudoClass(): void {
-        super.addActivePseudoClass();
-        this.style.innerHTML += `.` + this.buttonType + `-button-text {
-                    color: var(--` + this.buttonType + `-button-text-active-color);
-                  }
-              }
-          }`
-    }
-
-
-
-    protected override addDisabledPseudoClass(): void {
-        super.addDisabledPseudoClass();
-        this.style.innerHTML += `.` + this.buttonType + `-button-text {
-                    color: var(--` + this.buttonType + `-button-text-disabled-color);
-                  }
-              }
-          }
-        }`
+    protected override addInlineStyles(): void {
+        super.addInlineStyles();
+        this.renderer.setStyle(this.text, 'font-size', this._fontSize);
+        this.renderer.setStyle(this.text, 'font-weight', this._fontWeight);
+        this.renderer.setStyle(this.text, 'font-family', this._fontFamily);
     }
 }

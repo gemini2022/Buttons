@@ -1,0 +1,79 @@
+:root {
+    /* ===================== (DIMENSIONS) ===================== */
+    
+    // --tertiary-button-width: 100px;
+    // --tertiary-button-height: 40px;
+    // --tertiary-button-padding: 20px;
+    // --tertiary-button-font-size: 13px;
+    --tertiary-button-cursor: pointer;
+    --tertiary-button-border-width: 1px;
+    // --tertiary-button-font-weight: normal;
+    --tertiary-button-border-radius: 4px;
+    // --tertiary-button-font-family: Arial, Helvetica, sans-serif;
+    --tertiary-button-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.13);
+
+
+
+
+
+    /* ===================== (COLORS) ===================== */
+
+    --tertiary-button-text-color: #646464;
+    --tertiary-button-border-color: linear-gradient(#d2d2d2, #b5b5b5);
+    --tertiary-button-background-color: linear-gradient(#eaeaea, #cecece);
+
+
+
+
+
+    /* ===================== (HOVER COLORS) ===================== */
+
+    --tertiary-button-text-hover-color: rgb(75, 75, 75);
+    --tertiary-button-border-hover-color: linear-gradient(rgb(213, 213, 213), rgb(184, 184, 184));
+    --tertiary-button-background-hover-color: linear-gradient(rgb(240, 240, 240), rgb(212, 212, 212));
+
+
+
+
+
+    /* ===================== (ACTIVE COLORS) ===================== */
+
+    --tertiary-button-active-drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);
+    --tertiary-button-text-active-color: rgb(81, 81, 81);
+    --tertiary-button-border-active-color: linear-gradient(rgb(219, 219, 219), rgb(190, 190, 190));
+    --tertiary-button-background-active-color: linear-gradient(rgb(246, 246, 246), rgb(218, 218, 218));
+
+
+
+
+
+    /* ===================== (FOCUS OUTLINE) ===================== */
+
+    // --tertiary-button-focus-outline-width: 2px;
+    // --tertiary-button-focus-outline-offset: 2px;
+    // --tertiary-button-focus-outline-style: solid;
+    // --tertiary-button-focus-outline-color: #000000;
+
+
+
+
+
+    /* ===================== (FOCUS VISIBLE OUTLINE) ===================== */
+
+    --tertiary-button-focus-visible-outline-width: 2px;
+    --tertiary-button-focus-visible-outline-offset: 2px;
+    --tertiary-button-focus-visible-outline-style: solid;
+    --tertiary-button-focus-visible-outline-color: #000000;
+
+
+
+
+    
+    /* ===================== (DISABLED COLORS) ===================== */
+
+    --tertiary-button-disabled-cursor: default;
+    --tertiary-button-text-disabled-color: rgb(186, 186, 186);
+    --tertiary-button-border-disabled-color: linear-gradient(rgb(217, 217, 217), rgb(198, 198, 198));
+    --tertiary-button-background-disabled-color: linear-gradient(rgb(224, 224, 224), rgb(197, 197, 197));
+    --tertiary-button-disabled-drop-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+}

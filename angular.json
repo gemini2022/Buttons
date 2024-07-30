@@ -102,7 +102,7 @@
       "projectType": "library",
       "root": "projects/primary-button-directive",
       "sourceRoot": "projects/primary-button-directive/src",
-      "prefix": "lib",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -201,7 +201,7 @@
       "projectType": "library",
       "root": "projects/text-button-base",
       "sourceRoot": "projects/text-button-base/src",
-      "prefix": "lib",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -255,6 +255,237 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/icon-button-base/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "secondary-button-directive": {
+      "projectType": "library",
+      "root": "projects/secondary-button-directive",
+      "sourceRoot": "projects/secondary-button-directive/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/secondary-button-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/secondary-button-directive/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/secondary-button-directive/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/secondary-button-directive/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "tertiary-button-directive": {
+      "projectType": "library",
+      "root": "projects/tertiary-button-directive",
+      "sourceRoot": "projects/tertiary-button-directive/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/tertiary-button-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tertiary-button-directive/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tertiary-button-directive/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/tertiary-button-directive/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "quaternary-button": {
+      "projectType": "library",
+      "root": "projects/quaternary-button",
+      "sourceRoot": "projects/quaternary-button/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/quaternary-button/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/quaternary-button/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/quaternary-button/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/quaternary-button/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "quaternary-button-directive": {
+      "projectType": "library",
+      "root": "projects/quaternary-button-directive",
+      "sourceRoot": "projects/quaternary-button-directive/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/quaternary-button-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/quaternary-button-directive/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/quaternary-button-directive/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/quaternary-button-directive/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "secondary-icon-button-directive": {
+      "projectType": "library",
+      "root": "projects/secondary-icon-button-directive",
+      "sourceRoot": "projects/secondary-icon-button-directive/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/secondary-icon-button-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/secondary-icon-button-directive/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/secondary-icon-button-directive/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/secondary-icon-button-directive/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "tertiary-icon-button-directive": {
+      "projectType": "library",
+      "root": "projects/tertiary-icon-button-directive",
+      "sourceRoot": "projects/tertiary-icon-button-directive/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/tertiary-icon-button-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tertiary-icon-button-directive/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tertiary-icon-button-directive/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/tertiary-icon-button-directive/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "quaternary-icon-button-directive": {
+      "projectType": "library",
+      "root": "projects/quaternary-icon-button-directive",
+      "sourceRoot": "projects/quaternary-icon-button-directive/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/quaternary-icon-button-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/quaternary-icon-button-directive/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/quaternary-icon-button-directive/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/quaternary-icon-button-directive/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
